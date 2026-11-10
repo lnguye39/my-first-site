@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful by Eto Mori</title>
+  <style>
+    :root {
+      --bg: #fdfaf5;
+      --text: #2b2a33;
+      --muted: #6b6878;
+      --card: #ffffff;
+      --border: #ece6dc;
+      --c1: #ff6b6b;
+      --c2: #ffb347;
+      --c3: #4ecdc4;
+      --c4: #5b8def;
+      --c5: #a66cff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #17161c;
+        --text: #f1eef6;
+        --muted: #a9a5b5;
+        --card: #222129;
+        --border: #34323d;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    .rainbow {
+      height: 6px;
+      background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
+    }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 16px 64px;
+    }
+
+    header {
+      text-align: center;
+      padding: 56px 0 40px;
+    }
+
+    .eyebrow {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 12vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .author {
+      margin-top: 12px;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    section { margin-top: 48px; }
+
+    h2 {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+
+    p + p { margin-top: 1em; }
+
+    .reasons {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+      counter-reset: reason;
+    }
+
+    .reasons li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      padding: 20px;
+      counter-increment: reason;
+    }
+
+    .reasons li:nth-child(1) { --accent: var(--c1); }
+    .reasons li:nth-child(2) { --accent: var(--c3); }
+    .reasons li:nth-child(3) { --accent: var(--c5); }
+
+    .reasons h3 {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .reasons h3::before {
+      content: counter(reason) ". ";
+      color: var(--accent);
+    }
+
+    blockquote {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 24px 24px;
+      font-size: 1.25rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    blockquote::before {
+      content: "\201C";
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--c2);
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 16px;
+      font-size: 0.95rem;
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 64px;
+      text-align: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="rainbow"></div>
+
+  <main>
+    <header>
+      <p class="eyebrow">A book I love</p>
+      <h1>Colorful</h1>
+      <p class="author">by Eto Mori</p>
+    </header>
+
+    <section>
+      <h2>The story</h2>
+      <p>
+        A soul that has died after committing a terrible wrong is told it has
+        won a lottery: a second chance. To earn its way back into the cycle of
+        rebirth, it must live for a while inside the body of Makoto Kobayashi,
+        a fourteen-year-old boy who has just taken his own life.
+      </p>
+      <p>
+        Guided by a cheerful, offbeat angel named Purapura, the soul steps into
+        Makoto's world: his family, his school, his secrets. What first seems
+        like a bleak, gray life slowly turns out to be far more complicated, and
+        far more colorful, than it looked from the outside.
+      </p>
+    </section>
+
+    <section>
+      <h2>Three reasons I recommend it</h2>
+      <ol class="reasons">
+        <li>
+          <h3>It handles heavy topics gently</h3>
+          <p>
+            The book deals with depression, loneliness and suicide, but it does
+            so with warmth and even humor. It never feels preachy, and it leaves
+            you feeling hopeful instead of hopeless.
+          </p>
+        </li>
+        <li>
+          <h3>People are more than one color</h3>
+          <p>
+            Every character who seems cold or disappointing at first turns out
+            to have their own struggles. It's a powerful reminder that no one is
+            all good or all bad, including yourself.
+          </p>
+        </li>
+        <li>
+          <h3>It's short but stays with you</h3>
+          <p>
+            You can read it in an afternoon, yet the ending reframes everything
+            that came before it. It's the kind of book you want to hand to a
+            friend the moment you finish.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>A favorite quotation</h2>
+      <blockquote>
+        Miserable was having to spend lunch hour by yourself, walk to your next
+        class alone. The sheer fact that there was someone next to me every time
+        I turned to look made me just plain happy. My heart practically exploded.
+        <cite>— Eto Mori, <em>Colorful</em></cite>
+      </blockquote>
+    </section>
+
+    <footer>
+      <p>Made with love for a book that sees every shade.</p>
+    </footer>
+  </main>
+</body>
+</html>
